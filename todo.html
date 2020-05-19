@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+  
+  <head>
+    <!-- Meta information -->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+   
+    <title>Dhruv's Todo List</title>
+
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/style.css" rel="stylesheet">
+    <!-- internal css used to overcome the css effects of bootstrap -->
+    <style type="text/css">
+      .demo{
+        display: inline-block;
+      }
+
+      h3{
+        margin-left: 1em; 
+        color: black;
+      }
+
+      button{
+        border-style: none;
+        color: white;
+        background-color: rgba(80,60,170,80%);
+      }
+
+      .hmari{
+        height: 30px;
+        width: 90px;
+        margin-bottom: 1.1em;
+        position: absolute;
+        margin-left: 20%;
+        left: 50%;
+        border-radius: 10%;
+      }
+
+      .hmari2{
+        height: 30px;
+        width: 220px;
+        margin-bottom: 1.1em;
+        position: absolute;
+        margin-left: 6%;
+        left: 50%;
+        border-radius: 5%;
+      }
+
+      .rama{
+        height: 51px;
+        background-color: #FFC6B9;
+        margin: 0px;
+      }
+    
+    </style>
+
+    </head>
+    <!--getting already maintained lists-->
+    <body onload="fetchit(); fetchForComplete();">
+
+      <div class="container">
+        <!-- form that is refreshed after every submit -->
+        <form class="form-signin" id="frm1">
+          <h1 class="form-signin-heading">Your To-Do List</h2>
+          <br>
+          <br>
+          <br>
+          <input type="text" id="myText" class="form-control" placeholder="Enter new Task" required >
+          <input type="button" class="btn btn-lg btn-primary btn-block" type="submit" id="bt" value="submit"></input>
+        </form>
+      </div> 
+
+    <br>
+    <br>
+
+    <!-- List of pending tasks along with title and their number -->
+      <div  class  = "well"style="display: inline-block; background-color: rgba(125,125,125,80); width: 100%;">
+        <h2>Pending Tasks  <span id="np" style="margin-left: 2em;">0</span></h3>
+      </div>
+    
+    <br>
+
+      <div id="demo" style="min-height: 5em;  white-space: nowrap; overflow-x: auto; overflow-y: hidden;"></div>
+
+    <br>
+    <br>
+    <br>
+
+    <!-- list of completed tasks along with title and their number -->
+      <div class="well" style="display: inline-block; background-color: rgba(125,125,125,80); width: 100%; ">
+        <h2>Completed Tasks<span id="np2" style="margin-left: 1em;">0</span></h3>
+      </div>
+
+      <div id="demon" style="display: inline;"></div>
+
+    <br>
+    <br>
+
+      <!-- Button to refresh list-->
+    <center>
+      <button class="btn btn-primary" onclick="getConfirmation();">Refresh List</button>
+    </center>
+    
+      <!--Adding the required javascipt file-->
+    <script type="text/javascript" src="js/todo.js"></script>
+  </body>
+</html>
